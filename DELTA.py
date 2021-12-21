@@ -169,5 +169,5 @@ if __name__ == '__main__':
     setup()
     # Put your main code here, to run repeatedly
     while True:
-        getRPM = Timer(1.0, ISR_timerone())
+        getRPM = Timer(10.0, ISR_timerone())
         getRPM.start()
