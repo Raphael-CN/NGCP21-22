@@ -98,6 +98,7 @@ def ISR_timerone():
     print(M1PWM)
 
     print("- Encoder Ticks: ")
+    global M1encCount
     print(M1encCount)
 
     print("  Motor1 Speed : ")
@@ -107,7 +108,6 @@ def ISR_timerone():
     # Counts per Rotation = 4 x PPR
     print(calcRPM)
     print(" RPM - ")
-    global M1encCount
     M1encCount = 0  #  reset counter to zero
 
     print("  Error : ")
