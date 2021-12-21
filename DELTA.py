@@ -38,11 +38,11 @@ dErr = 0
 
 pi = pigpio.pi()
 
-pi.set_mode(M1ENCA, GPIO.IN)
-pi.set_mode(M1ENCB, GPIO.IN)
+pi.set_mode(M1ENCA, pigpio.INPUT)
+pi.set_mode(M1ENCB, pigpio.INPUT)
 
-pi.set_mode(M1CW, GPIO.OUT)
-pi.set_mode(M1CCW, GPIO.OUT)
+pi.set_mode(M1CW, pigpio.OUTPUT)
+pi.set_mode(M1CCW, pigpio.OUTPUT)
 
 ### Interrupt Service Routines ###
 
