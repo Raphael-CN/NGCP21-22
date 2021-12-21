@@ -168,6 +168,6 @@ def setup():
 if __name__ == '__main__':
     setup()
     # Put your main code here, to run repeatedly
-    while True:
+    for _ in range(10):
         getRPM = Timer(10.0, ISR_timerone())
         getRPM.start()
