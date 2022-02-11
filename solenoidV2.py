@@ -10,4 +10,7 @@ pi.set_mode(solenoidENA, pigpio.OUTPUT)
 pi.set_mode(solenoidIn1, pigpio.OUTPUT)
 pi.set_mode(solenoidIn2, pigpio.OUTPUT)
 
-pi.set_PWM_dutycycle(solenoidENA, 50)
+pi.write(motor1In1, 0)
+pi.write(motor1In2, 1)
+
+pi.set_PWM_dutycycle(solenoidENA, 64)
