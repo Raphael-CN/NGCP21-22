@@ -11,7 +11,7 @@ while True:
 
     #This Turns Relay On.
     GPIO.output(18, 1)
-    sleep(1000)
+    sleep(1)
     # Turns Relay Off.
     GPIO.output(18, 0)
-    sleep(1000)
+    sleep(1)
