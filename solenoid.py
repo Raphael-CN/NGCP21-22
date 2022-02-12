@@ -6,9 +6,12 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 # Initialize BCM pin 18 as output
 GPIO.setup(18, GPIO.OUT)
-solenoid = GPIO.PWM(18, 100)
 
-solenoid.start(50)
-input('Press return to stop:')   
-solenoid.stop()
-GPIO.cleanup()
+while True:
+
+    #This Turns Relay On.
+    GPIO.output(18, 1)
+    sleep(1000)
+    # Turns Relay Off.
+    GPIO.output(18, 0)
+    sleep(1000)
