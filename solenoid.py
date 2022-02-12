@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 solenoid = GPIO.PWM(18, 10)
 
-solenoid.start(100)
+solenoid.start(50)
 input('Press return to stop:')   
 solenoid.stop()
 GPIO.cleanup()
