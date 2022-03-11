@@ -25,5 +25,5 @@ while True:
         axis[i], addr = conn.recvfrom(512)
     for i in range(16):
         button[i], addr = conn.recvfrom(512)
-    print(axis)
-    print(button)
+    print(float(axis))
+    print(float(button))
