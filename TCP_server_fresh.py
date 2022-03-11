@@ -15,8 +15,7 @@ server_socket.listen()
 axis = np.zeros(6)
 button = np.zeros(16)
 
-# connection, address = server_socket.accept()
-connection = server_socket.accept()
+connection, address = server_socket.accept()
 # data, addr = server_socket.recv(512) # random buffer size, doesn't matter here..
 print("Beginning client communication: ")
 
