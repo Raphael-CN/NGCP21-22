@@ -20,7 +20,7 @@ connection, address = server_socket.accept()
 print("Beginning client communication: ")
 
 server_socket.sendall(b'Server communication established')
-while True:
+while connection:
     for i in range(6):
         # axis[i], addr = connection.recv(512)
         axis[i] = connection.recv(512)
