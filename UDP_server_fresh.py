@@ -4,7 +4,7 @@ import sys
 from struct import *
 import base64
 
-UDP_IP = "192.168.86.248" # listen to everything
+UDP_IP = "192.168.1.1" # listen to everything
 UDP_PORT = 12345 # port
 
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
