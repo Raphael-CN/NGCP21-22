@@ -10,6 +10,7 @@ TCP_PORT = 12345 # port
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 server_socket.bind((TCP_IP, TCP_PORT))
 server_socket.listen()
+server_socket.accept()
 
 # Define variables
 axis = np.zeros(6)
