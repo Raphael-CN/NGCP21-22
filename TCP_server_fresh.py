@@ -22,8 +22,8 @@ print("Beginning client communication: ")
 conn.send(b'Server communication established')
 while True:
     for i in range(6):
-        axis[i], addr = conn.recv(512)
+        axis[i] = conn.recvfrom(512)
     for i in range(16):
-        button[i], addr = conn.recv(512)
+        button[i] = conn.recvfrom(512)
     print(axis)
     print(button)
