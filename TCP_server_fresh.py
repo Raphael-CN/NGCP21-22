@@ -23,11 +23,9 @@ print("Beginning client communication: ")
 with connection:
     while True:
         for i in range(6):
-            # axis[i], addr = connection.recv(512)
-            axis[i] = connection.recv(512)
+            axis[i], addr = connection.recv(512)
         for i in range(16):
-            # button[i], addr = connection.recv(512)
-            button[i] = connection.recv(512)
+            button[i], addr = connection.recv(512)
         print(axis)
         print(button)
         connection.sendall(axis)
