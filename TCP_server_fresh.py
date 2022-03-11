@@ -16,7 +16,7 @@ conn, addr = server_socket.accept()
 axis = np.zeros(6)
 button = np.zeros(16)
 
-data, addr = conn.recv(512) # random buffer size, doesn't matter here..
+data, addr = server_socket.recv(512) # random buffer size, doesn't matter here..
 print("Beginning client communication: ")
 
 conn.send(b'Server communication established')
