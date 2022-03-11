@@ -16,14 +16,14 @@ conn, addr = server_socket.accept()
 axis = np.zeros(6)
 button = np.zeros(16)
 
-data, addr = server_socket.recv(512) # random buffer size, doesn't matter here..
+data, addr = conn.recvfrom(512) # random buffer size, doesn't matter here..
 print("Beginning client communication: ")
 
 conn.send(b'Server communication established')
 while True:
     for i in range(6):
-        axis[i], addr = conn.recv(512)
+        axis[i], addr = conn.recvfrom(512)
     for i in range(16):
-        button[i], addr = conn.recv(512)
+        button[i], addr = conn.recvfrom(512)
     print(axis)
     print(button)
