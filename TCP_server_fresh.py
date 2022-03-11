@@ -15,7 +15,7 @@ server_socket.listen()
 axis = np.zeros(6)
 button = np.zeros(16)
 
-connection, address = server_socket.accept()
+connection, addr = server_socket.accept()
 # data, addr = server_socket.recv(512) # random buffer size, doesn't matter here..
 print("Beginning client communication: ")
 
@@ -28,5 +28,3 @@ with connection:
             button[i], addr = connection.recv(512)
         print(axis)
         print(button)
-        connection.sendall(axis)
-        connection.sendall(button)
