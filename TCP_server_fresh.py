@@ -19,13 +19,16 @@ connection, address = server_socket.accept()
 # data, addr = server_socket.recv(512) # random buffer size, doesn't matter here..
 print("Beginning client communication: ")
 
-server_socket.sendall(b'Server communication established')
-while connection:
-    for i in range(6):
-        # axis[i], addr = connection.recv(512)
-        axis[i] = connection.recv(512)
-    for i in range(16):
-        # button[i], addr = connection.recv(512)
-        button[i] = connection.recv(512)
-    print(axis)
-    print(button)
+# server_socket.sendall(b'Server communication established')
+with connection:
+    while True:
+        for i in range(6):
+            # axis[i], addr = connection.recv(512)
+            axis[i] = connection.recv(512)
+        for i in range(16):
+            # button[i], addr = connection.recv(512)
+            button[i] = connection.recv(512)
+        print(axis)
+        print(button)
+        connection.sendall(axis)
+        connection.sendall(button)
