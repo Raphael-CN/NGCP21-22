@@ -1,6 +1,8 @@
 import serial
 import math
 from time import sleep
+import numpy as np
+import struct
 
 ser0 = serial.Serial("/dev/ttyS0", 115200,
                      parity = serial.PARITY_NONE,
