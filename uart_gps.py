@@ -21,10 +21,10 @@ ser2 = serial.Serial("/dev/ttyAMA3", 115200,
                      timeout = 1)
 
 class Uart():
-    def write(ser, input):
+    def write(self, ser, input):
         ser.write(bytes(str(input), 'utf-8'))
 
-    def read_int(ser, num):
+    def read_int(self, ser, num):
         serialdata = ser.read(num)
         ser.write(bytes(str(count), 'utf-8'))
         if serialdata >= bytes(str(0), 'utf-8') and serialdata <= bytes(str(9),'utf-8'):
@@ -33,7 +33,7 @@ class Uart():
             serialdata0 = 0
         return serialdata0
 
-    def readline(ser):
+    def readline(self, ser):
         serialdata = ser.readline()[:-2]
         return serialdata
 
@@ -62,9 +62,9 @@ class GPS():
     def bytes_to_DMS(self, GPS_input):
         hex_to_ascii = GPS_input.fromhex(GPS_input.decode("ascii"))
         ascii_to_string = ''.join(chr(i) for i in hex_to_ascii)
-        #degrees = int(ascii_to_string.split('°')[0])
-        #minutes = int((ascii_to_string.split("'")[0]).split("°")[1])
-        #seconds = float((ascii_to_string.split("'")[1]).split('"')[0])
+        degrees = int(ascii_to_string.split('°')[0])
+        minutes = int((ascii_to_string.split("'")[0]).split("°")[1])
+        seconds = float((ascii_to_string.split("'")[1]).split('"')[0])
         return degrees, minutes, seconds
 
 count = 0
