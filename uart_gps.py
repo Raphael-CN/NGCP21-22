@@ -69,7 +69,6 @@ class GPS():
 
 count = 0
 init = 0
-Uart = Uart()
 while True:
     if init == 0:
         serialdata0 = Uart.readline(ser0)
