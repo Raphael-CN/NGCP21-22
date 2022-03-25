@@ -7,8 +7,8 @@ try:
     PIN_TRIGGER_1 = 7
     PIN_ECHO_1 = 11
 
-    PIN_TRIGGER_2 = 29
-    PIN_ECHO_2 = 31
+    PIN_TRIGGER_2 = 31
+    PIN_ECHO_2 = 29
 
     GPIO.setup(PIN_TRIGGER_1, GPIO.OUT)
     GPIO.setup(PIN_ECHO_1, GPIO.IN)
