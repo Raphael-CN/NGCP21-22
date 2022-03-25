@@ -62,7 +62,7 @@ class GPS():
     def bytes_to_DMS(self, GPS_input):
         hex_to_ascii = GPS_input.fromhex(GPS_input.decode("ascii"))
         ascii_to_string = ''.join(chr(i) for i in hex_to_ascii)
-       # degrees = int(ascii_to_string.split('°')[0])
+        degrees = int(ascii_to_string.split('°')[0])
         minutes = int((ascii_to_string.split("'")[0]).split("°")[1])
         seconds = float((ascii_to_string.split("'")[1]).split('"')[0])
         return degrees, minutes, seconds
